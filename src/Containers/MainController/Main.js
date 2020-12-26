@@ -53,7 +53,9 @@ componentDidMount()  {
                 this.setState({serversData:oldServersData});
               } 
       })
-      .catch(error=>{})
+        .catch(error => {
+          throw new Error(error);
+      })
       
     }, i*this.state.duration);
     this.setState({timer:timer});
