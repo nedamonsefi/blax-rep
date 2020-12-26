@@ -1,72 +1,70 @@
-
-$xxs:5px;
-$xs : 10px;
-$small : 25px;
-$medium : 50px;
-$large : 75px;
-$xlarge : 100px;
+$xxs: 5px;
+$xs: 10px;
+$small: 25px;
+$medium: 50px;
+$large: 75px;
+$xlarge: 100px;
 $xxlarge: 150px;
 
-$color-first:#28B9B5;
-$color-second:#FF5049;
-$gray-dark:#555;
-$gray-darker:rgb(198, 196, 196);
-$gray-light:rgb(244, 244, 244);
-$gray-lighter:rgb(233, 231, 231);
-$black:#000;
-$white:#fff;
-
-
+$color-first: #28b9b5;
+$color-second: #ff5049;
+$gray-dark: #555;
+$gray-dark-1: #545;
+$gray-darker: #c6c4c4;
+$gray-light: rgb(244, 244, 244);
+$gray-lighter: rgb(233, 231, 231);
+$black: #000;
+$white: #fff;
 
 @mixin respond($breakpoint) {
-    @if $breakpoint == small-phone {
-        @media only screen and (max-width: 400px) { @content };    //600px
-    }
-    @if $breakpoint == phone {
-        @media only screen and (max-width: 600px) { @content };    //600px
-    }
-    @if $breakpoint == tab-port {
-        @media only screen and (max-width: 900px) { @content };     //900px
-    }
-    @if $breakpoint == tab-land {
-        @media only screen and (max-width: 1200px) { @content };    //1200px
-    }
-    @if $breakpoint == big-desktop {
-        @media only screen and (min-width: 1800px) { @content };    //1800
-    }
+  @if $breakpoint == small-phone {
+    @media only screen and (max-width: 400px) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 600px) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 900px) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 1800px) {
+      @content;
+    } //1800
+  }
 }
-@mixin space($type:margin,$direction:all,$amount:$medium){
-    @if $direction==all {#{$type}:$amount}
-    @else if $direction==left-right
-        {
-        #{$type}-left: $amount;
-        #{$type}-right: $amount;
-        }
-        @else if $direction==top-bottom
-        {
-        #{$type}-top: $amount;
-        #{$type}-bottom: $amount;
-        }
-        @else if $direction==top
-        {
-        #{$type}-top: $amount;
-        } 
-        @else if $direction==bottom
-        {
-        #{$type}-bottom: $amount;
-        } 
-        @else if $direction==left
-        {
-        #{$type}-bottom: $amount;
-        } 
-        @else if $direction==right
-        {
-        #{$type}-right: $amount;
-        } 
-} 
+@mixin space($type: margin, $direction: all, $amount: $medium) {
+  @if $direction==all {
+    #{$type}: $amount;
+  } @else if $direction==left-right {
+    #{$type}-left: $amount;
+    #{$type}-right: $amount;
+  } @else if $direction==top-bottom {
+    #{$type}-top: $amount;
+    #{$type}-bottom: $amount;
+  } @else if $direction==top {
+    #{$type}-top: $amount;
+  } @else if $direction==bottom {
+    #{$type}-bottom: $amount;
+  } @else if $direction==left {
+    #{$type}-bottom: $amount;
+  } @else if $direction==right {
+    #{$type}-right: $amount;
+  }
+}
 
-@mixin flex($direction:column){
-    display:flex;
-    flex-direction: $direction;
-    @content;
+@mixin flex($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  @content;
 }
