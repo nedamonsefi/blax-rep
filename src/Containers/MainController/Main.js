@@ -28,7 +28,7 @@ class Main extends React.Component{
 /*************************** */
 /** SENDING AJAX CALL  */
 /*************************** */
-componentDidMount(){
+componentDidMount()  {
   this.setState({loading:true});
   for(let i=1;i<=this.state.servers.length;i++){
     let server=this.state.servers[i-1];
