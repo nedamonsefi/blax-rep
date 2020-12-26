@@ -18,7 +18,7 @@ class Main extends React.Component{
 /*************************** */
 /** GET AND CHECK LOCALSTORAGE  */
 /*************************** */
-  componentWillMount(){
+  componentWillMount() {
     const storageServers=JSON.parse(localStorage.getItem("servers"));
     if(!storageServers){
       let storageServers = ['http://server.lb01.blax.cloud/index.php?json=1','http://server.moira.blax.host/index.php?json=1'];
@@ -34,7 +34,7 @@ componentDidMount(){
     let server=this.state.servers[i-1];
      let timer=setInterval(() => {
       axios.get(server)
-      .then(response=>{
+      .then(response=> {
         this.setState({loading:false});
         const oldServersData=[...this.state.serversData];
         const index=oldServersData.findIndex(data=>data.name===response.data.server_name);
