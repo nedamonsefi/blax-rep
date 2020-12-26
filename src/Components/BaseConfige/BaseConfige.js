@@ -60,4 +60,5 @@ const BaseConfig=(props)=>{
 }
 
 
+
 export default BaseConfig;
