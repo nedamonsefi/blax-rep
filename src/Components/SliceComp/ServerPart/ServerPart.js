@@ -16,6 +16,7 @@ const ServerPart=(props)=>{
                   }
                   content=<ListData value={props.data} danger={DH}/>
               }
+            
             break;
 /*************************** */
 /** DISKS CHECK ALERT   */
@@ -34,6 +35,7 @@ const ServerPart=(props)=>{
                     return <ListData  key={index} value={disk.name} percent={disk.value+' %'} danger={DD}/>
                 });
             }
+
             break;
 /*************************** */
 /** LOADS CHECK ALERT   */
@@ -56,6 +58,7 @@ const ServerPart=(props)=>{
                   )
               })
             }
+
             break;
 /*************************** */
 /** BACKUPS CHECK ALERT   */
@@ -95,7 +98,9 @@ const ServerPart=(props)=>{
             }
             break;    
         default:
+
             break;    
+        
     }
 /*************************** */
 /** HTML / JSX  */
