@@ -1,0 +1,16 @@
+@import '../../../assets/sass/abstracts/config';
+.ServerPart{
+    width:45%;
+    margin:10px 10px 10px 0px;
+    flex-shrink: 0;   
+}
+.ContentTitle{
+    @include flex(row);
+    border-bottom:1px solid $color-first;
+}
+.Title_4{
+    color:$color-first;
+    font-size: 90%;
+    @include space(margin,right,$xxs);
+  } 
+

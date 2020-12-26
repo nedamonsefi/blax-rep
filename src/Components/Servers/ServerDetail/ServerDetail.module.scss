@@ -1,0 +1,9 @@
+@import '../../../assets/sass/abstracts/config';
+.ServerDetail{
+    border:1px solid $color-first;  
+    @include space(padding,top-bottom,$small);
+    @include space(padding,left-right,$xxs);
+    @include space(margin,bottom,$small);
+    border-radius: 4px;
+    
+}

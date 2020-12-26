@@ -1,0 +1,85 @@
+@import '../../assets/sass/abstracts/config'; 
+.BaseConfige{
+    height: 40vh;
+    background-image:linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15)), url('../../assets/images/back.png');
+    background-size: cover;
+    position: relative;
+    @include flex(){
+        align-items: center;
+    };
+    .Container{
+        width: 60%;
+        background-color:rgba($white,0.80);
+        margin:auto;
+        border-radius: 5px;
+        @include space(padding,all,$small);
+        @include flex;
+        @include respond(tab-port) { // width < 900?
+            width:75%;
+        }
+        @include respond(phone) { // width < 600?
+            width:85%;
+        }
+        @include respond(small-phone) { // width < 400?
+           width:95%;
+        }
+        .InputGroup{
+            @include flex(row){
+                justify-content:space-between;
+            }
+            input{
+                height: 35px;
+                outline:none ;
+                border:1px solid $gray-darker;
+                transition: border 0.3s ease-out;
+                border-radius: 4px;
+                font-family: inherit;
+                color:inherit;
+                background-color: $white;
+                @include space(padding,all,$xxs);
+                &::placeholder{
+                 color:$gray-darker;
+                }
+                &:focus{
+                    border:1px solid $color-first;
+                }
+            }
+            .ServerValue{
+                width:85%;
+            }
+
+            button{
+                @include flex(row){
+                    align-items: center;
+                }
+                border:none;
+                outline: none;
+                background-color: transparent;
+                vertical-align: middle;
+                cursor: pointer;
+                font-weight: 100;
+                transition: all 0.5s ease-in; 
+                & > *{
+                  color:$color-first;
+                  font-size: 180%;
+                }
+                &:hover > * { color:$color-second;}
+            } 
+            &:last-child{
+                @include space(margin,top,$small);
+            }
+        }
+    }
+    .Title{
+        @include space(margin,top,$small);
+        color:rgba($color-second,0.35);
+        display: inline-block;
+        background-image: -webkit-gradient(linear, left top, right top, from(#7ed56f), to(#28b485));
+        background-image: linear-gradient(to right, $white,$color-first);
+        background-clip: text;
+        color: transparent;
+        letter-spacing: .1rem;
+        transition: all .2s;
+        text-align: center;
+    }
+} 

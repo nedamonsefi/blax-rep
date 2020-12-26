@@ -1,0 +1,66 @@
+.tooltip {
+    position: relative;
+    display: inline-block;
+    .tooltiptext {
+        visibility: hidden;
+        width: auto;
+        padding:0px $xs;
+        background-color: $color-second;
+        color: $white;
+        text-align: center;
+        border-radius: 6px;
+        @include space(padding,top-bottom,$xxs);
+        position: absolute;
+        bottom: 110%;
+        left: 0;
+        z-index: 1;
+        font-size: 80%;
+      }
+      &:hover{
+          .tooltiptext {
+            visibility: visible;
+          }
+      }
+  }
+  .container{
+    width: 70%;
+    margin:auto;
+    @include flex;
+    @include space(padding,top-bottom,$medium);
+    @include respond(tab-port) { // width < 600?
+        width:90%;
+    }
+    @include respond(phone) { // width < 600?
+        width:95%;
+    }
+    @include respond(small-phone) { // width < 600?
+       width:100%;
+    }
+  }
+  .card{
+    border:1px solid $color-first;
+    border-radius: 4px;
+    @include space(padding,all,$xs);
+  }
+  .title-1{
+    font-size:180%;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .title-3{
+    font-size:150%;
+    text-transform: capitalize;
+    font-weight: 400;
+  }
+  .text-align{
+    text-align: center;
+  }
+  .danger{
+    color:$color-second !important;
+    border-bottom:1px solid $color-second !important;
+    & > *{
+      color:$color-second !important;
+    }
+  }
+  
+

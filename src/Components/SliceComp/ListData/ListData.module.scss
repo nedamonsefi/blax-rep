@@ -1,0 +1,21 @@
+@import '../../../assets/sass/abstracts/config';
+.ListData {
+    border-bottom:1px solid $gray-lighter;
+   @include flex(row){
+       align-items: center;
+   }
+   & > div{
+       margin-right:auto;
+       font-size: 90%;
+       font-weight: 300;
+       min-width: 25px;
+   }
+   & .Icon_main{
+    @include flex(row){
+      align-items: center;
+    }
+    color:$color-first;
+    font-size: 120%;
+}
+
+}
