@@ -58,4 +58,6 @@ const BaseConfig=(props)=>{
         </section>
     );
 }
+
+
 export default BaseConfig;
