@@ -30,7 +30,7 @@ class Main extends React.Component{
 /*************************** */
 componentDidMount()  {
   this.setState({loading:true});
-  for(let i=1;i<=this.state.servers.length;i++){
+  for(let i=1;i<=this.state.servers.length;i++) {
     let server=this.state.servers[i-1];
      let timer=setInterval(() => {
       axios.get(server)
@@ -38,7 +38,7 @@ componentDidMount()  {
         this.setState({loading:false});
         const oldServersData=[...this.state.serversData];
         const index=oldServersData.findIndex(data=>data.name===response.data.server_name);
-        if(index===-1){
+        if (index===-1) {
           this.setState(
             {serversData:
               [...this.state.serversData,
@@ -46,7 +46,7 @@ componentDidMount()  {
             ]
             });
         }
-        else if(index!==-1){
+        else if (index!==-1) {
                 let updatedValue={...oldServersData[index].data};
                 updatedValue=response.data;
                 oldServersData[index].data=updatedValue;
@@ -61,13 +61,13 @@ componentDidMount()  {
     this.setState({timer:timer});
   }
 }
-componentWillUnmount(){
+componentWillUnmount() {
   clearInterval(this.state.timer);
 }
 /*************************** */
 /** ADD NEW SERVER HANDELER   */
 /*************************** */
- addServerHandeler=(serverName)=>{
+ addServerHandeler=(serverName) => {
   const updatesServer=[...this.state.servers,serverName];
   localStorage.setItem("servers", JSON.stringify(updatesServer));
   this.setState({
@@ -83,13 +83,13 @@ componentWillUnmount(){
   })
 }
 
-render(){
+render() {
 /*************************** */
 /** LOGIC   */
 /*************************** */
 let content=this.state.error ?  <ErrorPag>Something went wrong! can't reach to the server!  </ErrorPag>: <Spinner/>;
-if(!this.state.loading){
-  if(this.state.serversData){
+if(!this.state.loading) {
+  if(this.state.serversData) {
      content=<Servers serversDataVal={this.state.serversData}/> 
   }
 }
