@@ -54,7 +54,7 @@ componentDidMount()  {
               } 
       })
         .catch(error => {
-          console.log('hello error');
+          throw new Error(error);
       })
       
     }, i*this.state.duration);
